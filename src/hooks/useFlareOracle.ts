@@ -3,7 +3,7 @@
 import { ftsoV2Abi } from "@app/abis";
 import { FTSO_V2_ADDRESS } from "@app/configs";
 import { useQuery } from "@tanstack/react-query";
-import { createPublicClient, Hex, http } from "viem";
+import { createPublicClient, http } from "viem";
 import { flareTestnet } from "viem/chains";
 import { useMarketStore } from "./useMarket";
 

@@ -2,7 +2,7 @@
 
 import { useAccount } from "wagmi";
 import { fonzoMarketAbi } from "@app/abis";
-import { Address, createPublicClient, Hex, http, zeroAddress } from "viem";
+import { createPublicClient, http, zeroAddress } from "viem";
 import { flareTestnet } from "wagmi/chains"
 import { useQuery } from "@tanstack/react-query";
 import { useMarket } from "./useMarket";

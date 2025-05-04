@@ -2,7 +2,6 @@
 
 import { Badge, Box, HStack, Show, Text, VStack } from "@chakra-ui/react";
 import { FaClock } from "react-icons/fa6";
-import { DeltaArrow } from "./DeltaArrow";
 import { Option, PositionInfo, useFlareOracle } from "@app/hooks";
 import { colors } from "@app/configs";
 import { formatPrice } from "../helpers";

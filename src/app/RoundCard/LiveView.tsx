@@ -1,11 +1,10 @@
 "use client";
 
 import { Box, HStack, Text, VStack } from "@chakra-ui/react";
-import { BearishIcon, BullishIcon } from "./Icon";
 import { FaRegPlayCircle } from "react-icons/fa";
 import { useEffect } from "react";
 import { ResolveView } from "./ResolveView";
-import { Round, useMarket, useBoolean, useFlareOracle } from "@app/hooks";
+import { Round, useBoolean, useFlareOracle } from "@app/hooks";
 import { formatFlare, formatPrice, getMultiplier } from "../helpers";
 import { colors } from "@app/configs";
 import { RoundTimer } from "./RoundTimer";
@@ -20,7 +19,6 @@ export function LiveView({
   lockPrice,
   rewardPrize,
   closeTime,
-  position,
   totalAmount,
   bearAmount,
   bullAmount,

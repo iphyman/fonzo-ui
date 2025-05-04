@@ -208,7 +208,7 @@ export function useFonzoMarket() {
                 });
             }
         }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
+
     }, [error]);
 
     useEffect(() => {

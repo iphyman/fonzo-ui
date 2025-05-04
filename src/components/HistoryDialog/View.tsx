@@ -22,7 +22,6 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useMemo } from "react";
-import { useAccount } from "wagmi";
 
 const ClosingPrice = ({
   priceMark,
@@ -212,9 +211,7 @@ export const Row = ({
 };
 
 export default function HistoryView() {
-  const { data: positions, refetch } = usePositions();
-  const { address } = useAccount();
-  // const { marketInfo } = useActiveMarket();
+  const { data: positions } = usePositions();
   const { isConfirming, isPending, settle } = useFonzoMarket();
   const claimable = positions
     ?.filter((m) => m.position?.hasWon && !m.position.claimed)

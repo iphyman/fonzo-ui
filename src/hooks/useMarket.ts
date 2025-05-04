@@ -54,6 +54,8 @@ export function useMarket() {
         if (marketId === null) {
             setMarketId(FeedIds.FLRUSD)
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [allMarkets]);
 
     return { allMarkets, info, marketId, selectMarket }
