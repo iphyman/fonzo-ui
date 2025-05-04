@@ -1,0 +1,145 @@
+import { Address, Hex } from "viem";
+
+export type MarketInfo = {
+    name: string;
+    feedId: Hex;
+    category: string;
+    logo?: string;
+    decimal?: number;
+}
+
+export enum FeedIds {
+    FLRUSD = "0x01464c522f55534400000000000000000000000000",
+    BTCUSD = "0x014254432f55534400000000000000000000000000",
+    ETHUSD = "0x014554482f55534400000000000000000000000000",
+    AVAXUSD = "0x01415641582f555344000000000000000000000000",
+    BNBUSD = "0x01424e422f55534400000000000000000000000000",
+    SOLUSD = "0x01534f4c2f55534400000000000000000000000000",
+    DOTUSD = "0x01444f542f55534400000000000000000000000000"
+}
+
+export const colors = {
+    white: "white",
+    failure: "#ED4B9E",
+    failure33: "#ED4B9E33",
+    primary: "#1FC7D4",
+    primary0f: "#1FC7D40f",
+    primary3D: "#1FC7D43D",
+    primaryBright: "#53DEE9",
+    primaryDark: "#0098A1",
+    success: "#31D0AA",
+    success19: "#31D0AA19",
+    warning: "#FFB237",
+    warning2D: "#ED4B9E2D",
+    warning33: "#ED4B9E33",
+    secondary: "#A881FC",
+    secondary10: "#322B48",
+    secondary20: "#4B3B5F",
+    secondary80: "#A881FC80",
+    background: "#08060B",
+    backgroundDisabled: "#3c3742",
+    backgroundAlt: "#27262c",
+    backgroundAlt2: "rgba(39, 38, 44, 0.7)",
+    backgroundAlt3: "rgba(0, 0, 0, 0.2)",
+    backgroundHover: "rgba(0, 0, 0, 0.04)",
+    backgroundTapped: "rgba(0, 0, 0, 0.08)",
+    card: "#27262C",
+    cardBorder: "#383241",
+    contrast: "#FFFFFF",
+    dropdown: "#1E1D20",
+    dropdownDeep: "#100C18",
+    invertedContrast: "#191326",
+    input: "#372F47",
+    inputSecondary: "#262130",
+    tertiary: "#353547",
+    tertiary20: "#E2EDEE",
+    tertiaryPale20: "#44445B",
+    text: "#F4EEFF",
+    text99: "#F4EEFF99",
+    textDisabled: "#666171",
+    textSubtle: "#B8ADD2",
+    disabled: "#524B63",
+    primary10: "#13393C",
+    primary20: "#094D53",
+    primary60: "#48D0DB",
+    positive10: "#0C3A32",
+    positive20: "#035345",
+    positive60: "#3DDBB5",
+    destructive10: "#551146",
+    destructive20: "#7B194D",
+    destructive60: "#FB7EC1",
+    destructive: "#ED4B9E",
+    warning10: "#452E14",
+    warning20: "#754300",
+    gradientPrimary: "linear-gradient(228.54deg, #1FC7D4 -13.69%, #9A6AFF 91.33%)",
+    gradientBubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
+    gradientInverseBubblegum: "linear-gradient(139.73deg, #3D2A54 0%, #313D5C 100%)",
+    gradientCardHeader: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
+    gradientBlue: "linear-gradient(180deg, #00707F 0%, #19778C 100%)",
+    gradientViolet: "linear-gradient(180deg, #6C4999 0%, #6D4DB2 100%)",
+    gradientVioletAlt: "linear-gradient(180deg, #434575 0%, #66578D 100%)",
+    gradientGold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
+    gradientBold: "linear-gradient(#53DEE9, #9A6AFF)",
+}
+
+export const SUPPORTED_MARKET_IDS = [
+    FeedIds.AVAXUSD,
+    FeedIds.BNBUSD,
+    FeedIds.BTCUSD,
+    FeedIds.DOTUSD,
+    FeedIds.ETHUSD,
+    FeedIds.FLRUSD,
+    FeedIds.SOLUSD
+]
+
+export const MARKET_INFO: { [feedId: Hex]: MarketInfo } = {
+    [FeedIds.FLRUSD]: {
+        name: "FLR/USD",
+        feedId: FeedIds.FLRUSD,
+        category: "Crypto",
+        logo: "/flare.png"
+    },
+    [FeedIds.BTCUSD]: {
+        name: "BTC/USD",
+        feedId: FeedIds.BTCUSD,
+        category: "Crypto",
+        logo: "/bitcoin.png"
+    },
+    [FeedIds.ETHUSD]: {
+        name: "ETH/USD",
+        feedId: FeedIds.ETHUSD,
+        category: "Crypto",
+        logo: "/ethereum.png"
+    },
+    [FeedIds.AVAXUSD]: {
+        name: "AVAX/USD",
+        feedId: FeedIds.AVAXUSD,
+        category: "Crypto",
+        logo: "/avalanche.png"
+    },
+    [FeedIds.BNBUSD]: {
+        name: "BNB/USD",
+        feedId: FeedIds.BNBUSD,
+        category: "Crypto",
+        logo: "/binance.png"
+    },
+    [FeedIds.SOLUSD]: {
+        name: "SOL/USD",
+        feedId: FeedIds.SOLUSD,
+        category: "Crypto",
+        logo: "/solana.png"
+    },
+    [FeedIds.DOTUSD]: {
+        name: "DOT/USD",
+        feedId: FeedIds.DOTUSD,
+        category: "Crypto",
+        logo: "/polkadot.png"
+    }
+
+}
+
+export const getAllMarketsInfo = () => SUPPORTED_MARKET_IDS.map((m) => MARKET_INFO[m]);
+
+export const MARKET_ADDRESS: Address = "0x442A6Bd228adF9E8c8F9632e1A5479E512066D3C";
+export const FTSO_V2_ADDRESS: Address = "0xC4e9c78EA53db782E28f28Fdf80BaF59336B304d";
+export const PAST_ROUND_FETCH = BigInt(6);

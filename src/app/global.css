@@ -1,0 +1,8 @@
+.swiper-wrapper {
+  display: "flex";
+  align-items: "center";
+}
+
+.swiper-slide {
+  width: 20rem;
+}
