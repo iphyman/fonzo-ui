@@ -13,6 +13,7 @@ import {
   RoundMultiplierUpArrow,
 } from "./RoundMultiplierArrow";
 import { useMemo } from "react";
+import { ArrowDownIcon, ArrowUpIcon } from "./Icon";
 
 export function ExpiredView({
   roundId,
@@ -128,7 +129,35 @@ export function ExpiredView({
                   >
                     {formatPrice(closingPrice.toString(), decimals)}
                   </Text>
-                  <DeltaArrow delta={delta} size={32} />
+                  {closingPrice > lockedPrice ? (
+                    <HStack
+                      padding="4px"
+                      borderRadius="8px"
+                      bg={colors.success}
+                    >
+                      <ArrowUpIcon w="20px" h="20px" fill={colors.white} />
+                      <Text fontSize="14px" color="fg">
+                        {formatPrice(
+                          (closingPrice - lockedPrice).toString(),
+                          decimals
+                        )}
+                      </Text>
+                    </HStack>
+                  ) : (
+                    <HStack
+                      padding="4px"
+                      borderRadius="8px"
+                      bg={colors.failure}
+                    >
+                      <ArrowDownIcon w="20px" h="20px" fill={colors.white} />
+                      <Text fontSize="14px" color="fg">
+                        {formatPrice(
+                          (closingPrice - lockedPrice).toString(),
+                          decimals
+                        )}
+                      </Text>
+                    </HStack>
+                  )}
                 </HStack>
               </VStack>
               <HStack w="full" justifyContent="space-between">

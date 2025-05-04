@@ -34,7 +34,7 @@ export const getMultiplier = (total: bigint, amount: bigint) => {
     }
 
     const multiplier = Number(formatEther(total)) / Number(formatEther(amount));
-    return multiplier;
+    return Number(multiplier.toFixed(2));
 }
 
 export const getPriceDifference = (price: bigint | undefined, lockPrice: bigint | undefined) => {

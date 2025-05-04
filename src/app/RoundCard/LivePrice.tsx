@@ -64,7 +64,6 @@ export function LivePrice({ markPrice }: { markPrice?: number }) {
               </Text>
             </HStack>
           ) : (
-            // <ArrowDownIcon w="32px" h="32px" fill={colors.failure} />
             <HStack padding="4px" borderRadius="8px" bg={colors.failure}>
               <ArrowDownIcon w="20px" h="20px" fill={colors.white} />
               <Text fontSize="14px" color="fg">

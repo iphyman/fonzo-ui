@@ -31,7 +31,7 @@ export default function PrevNextNav() {
   };
 
   return (
-    <HStack alignItems="center">
+    <HStack alignItems="center" position="absolute" left="50%">
       <IconButton onClick={handlePrevSlide} variant="ghost">
         <IoMdArrowRoundBack />
       </IconButton>
